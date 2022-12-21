@@ -11,7 +11,7 @@ services:
   api:
     build: ./backend
     ports:
-      - 2000:2000
+      - 44777:44777
     depends_on:
       - db
     environment:

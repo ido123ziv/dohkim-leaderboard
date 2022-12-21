@@ -1,8 +1,8 @@
 import psycopg2
 import os
 
-from dotenv import load_dotenv
-load_dotenv()
+# from dotenv import load_dotenv
+# load_dotenv()
 QUERY = "SELECT * from winners"
 INSERT = """INSERT (1, "ido") into winners"""
 conn = psycopg2.connect(

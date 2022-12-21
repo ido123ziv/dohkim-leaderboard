@@ -4,7 +4,7 @@ import os
 # from dotenv import load_dotenv
 # load_dotenv()
 QUERY = "SELECT * from winners"
-INSERT = """INSERT (1, "ido") into winners"""
+INSERT = """INSERT into winners (winner_name) values ('ido')"""
 conn = psycopg2.connect(
     host=os.environ.get('DATABASE_URL'),
     database=os.environ.get('DATABASE_NAME'),

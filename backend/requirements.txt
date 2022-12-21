@@ -2,5 +2,5 @@ psycopg2-binary==2.9.5
 blacksheep==1.2.8
 python-dotenv==0.21.0
 uvicorn==0.20.0
-fastapi
-cchardet
+fastapi==0.88.0
+cchardet==2.1.7

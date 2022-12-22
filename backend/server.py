@@ -13,4 +13,5 @@ def home(request):
 
 @post("/")
 def post_example(request):
+    update_data()
     return "POST Example"

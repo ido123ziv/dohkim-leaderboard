@@ -14,13 +14,15 @@ conn = psycopg2.connect(
 
 def get_data():
     cur = conn.cursor()
-    results = cur.execute(QUERY)
+    cur.execute(QUERY)
+    results = cur.fetchall()
     print(f"the results are here!\n{results}")
     return results
 
 
 def update_data():
     cur = conn.cursor()
-    result = cur.execute(INSERT)
+    cur.execute(INSERT)
+    conn.commit()
     print("hurray!")
     return "Updated DB"

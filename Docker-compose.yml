@@ -14,6 +14,8 @@ services:
       - 44777:44777
     depends_on:
       - db
+    volumes:
+      - ./backend:/app
     environment:
       DATABASE_NAME: docker
       DATABASE_USERNAME: docker

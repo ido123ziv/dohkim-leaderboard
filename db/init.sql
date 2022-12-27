@@ -1,8 +1,14 @@
-CREATE TABLE winners(
-    winner_id SERIAL PRIMARY KEY,
-    winner_name VARCHAR(255) NOT NULL
+CREATE TABLE participants(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
 );
 
-INSERT INTO winners (winner_name) VALUES ('ido');
-INSERT INTO winners (winner_name) VALUES ('ziv');
+CREATE TABLE weekly_competitaion(
+    winner_id int references participants(id),
+    winner_score int 
+);
 
+CREATE TABLE leader_board(
+    winner_id int references participants(id),
+    winner_name VARCHAR(255) NOT NULL
+);

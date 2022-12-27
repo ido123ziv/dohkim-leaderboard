@@ -5,8 +5,7 @@ import os
 # load_dotenv()
 
 # SQL Queries
-QUERY = "SELECT * from winners"
-INSERT = """INSERT into winners (winner_name) values ('ido')"""
+QUERY = "SELECT * from participants"
 conn = psycopg2.connect(
     host=os.environ.get('DATABASE_URL'),
     database=os.environ.get('DATABASE_NAME'),
@@ -16,6 +15,8 @@ conn = psycopg2.connect(
 """
 returns all the data from winners table
 """
+
+
 def get_data():
     cur = conn.cursor()
     cur.execute(QUERY)
@@ -23,12 +24,14 @@ def get_data():
     print(f"the results are here!\n{results}")
     return results
 
+
 """
 adds another winner to db
 """
-def update_data():
+
+
+def update_data(val):
     cur = conn.cursor()
-    cur.execute(INSERT)
+    cur.execute(f"INSERT into participants (name) values ('{val}')")
     conn.commit()
-    print("hurray!")
     return "Updated DB"
